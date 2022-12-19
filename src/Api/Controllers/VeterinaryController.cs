@@ -25,7 +25,7 @@ namespace Api.Controllers
     {
       try
       {
-        if (ModelState.IsValid)
+        if (!ModelState.IsValid)
         {
           await _veterinaryRepository.Create(veterinary);
           return RedirectToAction("Index");
