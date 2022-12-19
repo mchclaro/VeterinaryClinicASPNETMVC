@@ -33,14 +33,6 @@ namespace Data.Repositories
       await _context.SaveChangesAsync();
     }
 
-    public async Task<bool> Exists(int id)
-    {
-      var res = await _context.Veterinary
-          .AnyAsync(c => c.Id == id);
-
-      return res;
-    }
-
     public async Task<Veterinary> Read(int id)
     {
       return await _context.Veterinary

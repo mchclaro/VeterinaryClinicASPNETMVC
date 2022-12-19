@@ -9,7 +9,6 @@ namespace Domain.Interfaces
     Task<Animal> Read(int id);
     Task<IList<Animal>> ReadAll();
     Task Update(Animal animal);
-    Task<bool> Exists(int id);
     Task Delete(int id);
   }
 }

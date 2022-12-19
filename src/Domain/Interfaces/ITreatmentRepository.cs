@@ -8,7 +8,6 @@ namespace Domain.Interfaces
     Task<Treatment> Read(int id);
     Task<IList<Treatment>> ReadAll();
     Task Update(Treatment treatment);
-    Task<bool> Exists(int id);
     Task Delete(int id);
   }
 }
