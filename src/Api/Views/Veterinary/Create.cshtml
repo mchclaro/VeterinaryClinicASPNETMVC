@@ -1,0 +1,24 @@
+﻿@model Domain.Entities.Veterinary
+@{
+    ViewData["Title"] = "Cadastro de veterinário";
+}
+
+<div>
+  <h2 class="display-4">Cadastro de veterinário</h2>
+</div>
+<br />
+
+<form class="col-md-6" asp-controller="Veterinary" asp-action="Create" method="post">
+    <div class="form-group mb-2">
+      <label for="name">Nome</label>
+      <input type="text" asp-for="Name" class="form-control" placeholder="Nome do veterinário">
+      @Html.ValidationMessageFor(x => x.Name)
+    </div>
+
+    <br />
+    <div class="form-group col-md-6 mb-2">
+      <button class="btn btn-success" role="button" type="submit"><i class="glyphicon glyphicon-ok"></i> Salvar</button>
+      <a class="btn btn-danger" asp-action="Index" asp-controller="Veterinary" role="button"><i class="glyphicon glyphicon-remove"></i> Cancelar</a>
+    </div>
+</form>
+

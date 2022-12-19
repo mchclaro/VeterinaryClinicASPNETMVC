@@ -1,0 +1,34 @@
+﻿@model Domain.Entities.Animal
+@{
+    ViewData["Title"] = "Cadastro de animal";
+}
+
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<div>
+  <h3 class="display-2">Cadastro de animal</h3>
+</div>
+<br />
+
+  <form class="col-md-6" asp-controller="Animal" asp-action="Create" method="post">
+    <div class="form-group mb-2 ">
+      <label for="name">Nome</label>
+      <input type="text" asp-for="Name" class="form-control" placeholder="Nome do animal">
+      @Html.ValidationMessageFor(x => x.Name)
+    </div>
+    <div class="form-group mb-2">
+      <label for="breed">Raça</label>
+      <input type="text" asp-for="Breed" class="form-control" placeholder="Raça do animal">
+      @Html.ValidationMessageFor(x => x.Breed)
+    </div>
+    <div class="form-group mb-2">
+      <label for="age">Idade</label>
+      <input type="number" asp-for="Age" class="form-control" placeholder="Idade do animal em meses">
+      @Html.ValidationMessageFor(x => x.Age)
+    </div>
+    <br />
+    <div class="form-group col-md-6 mb-2">
+      <button type="submit" class="btn btn-success"><i class="glyphicon glyphicon-ok"></i> Salvar</button>
+      <a class="btn btn-danger" asp-action="Index" asp-controller="Animal" role="button"><i class="glyphicon glyphicon-remove"></i> Cancelar</a>
+    </div>
+</form>

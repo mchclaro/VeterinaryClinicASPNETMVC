@@ -1,0 +1,17 @@
+C:\projetos\VeterinaryClinic\src\Data\bin\Debug\net6.0\Data.deps.json
+C:\projetos\VeterinaryClinic\src\Data\bin\Debug\net6.0\Data.runtimeconfig.json
+C:\projetos\VeterinaryClinic\src\Data\bin\Debug\net6.0\Data.dll
+C:\projetos\VeterinaryClinic\src\Data\bin\Debug\net6.0\Data.pdb
+C:\projetos\VeterinaryClinic\src\Data\bin\Debug\net6.0\Domain.dll
+C:\projetos\VeterinaryClinic\src\Data\bin\Debug\net6.0\Domain.pdb
+C:\projetos\VeterinaryClinic\src\Data\obj\Debug\net6.0\Data.csproj.AssemblyReference.cache
+C:\projetos\VeterinaryClinic\src\Data\obj\Debug\net6.0\Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\projetos\VeterinaryClinic\src\Data\obj\Debug\net6.0\Data.AssemblyInfoInputs.cache
+C:\projetos\VeterinaryClinic\src\Data\obj\Debug\net6.0\Data.AssemblyInfo.cs
+C:\projetos\VeterinaryClinic\src\Data\obj\Debug\net6.0\Data.csproj.CoreCompileInputs.cache
+C:\projetos\VeterinaryClinic\src\Data\obj\Debug\net6.0\Data.csproj.CopyComplete
+C:\projetos\VeterinaryClinic\src\Data\obj\Debug\net6.0\Data.dll
+C:\projetos\VeterinaryClinic\src\Data\obj\Debug\net6.0\refint\Data.dll
+C:\projetos\VeterinaryClinic\src\Data\obj\Debug\net6.0\Data.pdb
+C:\projetos\VeterinaryClinic\src\Data\obj\Debug\net6.0\Data.genruntimeconfig.cache
+C:\projetos\VeterinaryClinic\src\Data\obj\Debug\net6.0\ref\Data.dll

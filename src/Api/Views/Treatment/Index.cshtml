@@ -1,0 +1,51 @@
+﻿@model List<Domain.Entities.Treatment>
+@{
+    ViewData["Title"] = "Treatment";
+}
+
+<div className="main">
+  <h2>Todos Atendimentos</h2>
+  <br />
+
+<div class="new">
+    <a class="btn btn-primary" asp-controller="Treatment" asp-action="Create"><i class="glyphicon glyphicon-plus"></i> Novo Atendimento</a>
+</div>
+
+<br />
+
+  <table class="table table-borderless table-light" id="table">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Observação</th>
+        <th scope="col">Nome (Animal)</th>
+        <th scope="col">Raça (Animal)</th>
+        <th scope="col">Idade (Animal)</th>
+        <th scope="col">Veterinário</th>
+        <th scope="col">Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      @if (Model != null && Model.Any())
+              {
+                  foreach (var treatments in Model)
+                  {
+                      <tr>
+                        <td>@Html.DisplayFor(modelItem => treatments.Id)</td>
+                        <td>@Html.DisplayFor(modelItem => treatments.Comment)</td>
+                        <td>@Html.DisplayFor(modelItem => treatments.Animal.Name)</td>
+                        <td>@Html.DisplayFor(modelItem => treatments.Animal.Breed)</td>
+                        <td>@Html.DisplayFor(modelItem => treatments.Animal.Age)</td>
+                        <td>@Html.DisplayFor(modelItem => treatments.Veterinary.Name)</td>
+                        <td>
+                            <div class="btn-group" role="group">
+                              <a role="button" class="btn btn-primary" asp-route-id="@treatments.Id" asp-controller="Treatment" asp-action="Update"><i class="glyphicon glyphicon-pencil"></i> Editar</a>
+                              <a role="button" class="btn btn-danger" asp-route-id="@treatments.Id" asp-controller="Treatment" asp-action="Delete"><i class="glyphicon glyphicon-trash"></i> Excluir</a>
+                            </div>
+                        </td>
+                      </tr>
+                  }
+              }
+          </tbody>
+  </table>
+</div>

@@ -1,0 +1,63 @@
+﻿@model List<Domain.Entities.Animal>
+@{
+    ViewData["Title"] = "Animal";
+}
+
+@if (TempData["Sucesso"] != null)
+{
+  <div class="alert alert-success" role="alert">
+    <button type="button" class="btn btn-danger btn-sm close-alert" aria-label="Close">X</button>
+    @TempData["Sucesso"]
+  </div>
+}
+
+@if (TempData["Erro"] != null)
+{
+  <div class="alert alert-danger" role="alert">
+    <button type="button" class="btn btn-danger btn-sm close-alert" aria-label="Close">X</button>
+    @TempData["Erro"]
+</div>
+}
+
+<div className="main">
+  <h2>Todos Animais</h2>
+  <br />
+
+<div class="">
+  <a class="btn btn-primary" asp-controller="Animal" asp-action="Create"><i class="glyphicon glyphicon-plus"></i> Novo Animal</a>
+</div>
+
+<br />
+
+  <table class="table table-borderless table-light" id="table">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Nome</th>
+        <th scope="col">Raça</th>
+        <th scope="col">Idade</th>
+        <th scope="col">Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      @if (Model != null && Model.Any())
+              {
+                  foreach (var animais in Model)
+                  {
+                      <tr>
+                        <td>@Html.DisplayFor(modelItem => animais.Id)</td>
+                        <td>@Html.DisplayFor(modelItem => animais.Name)</td>
+                        <td>@Html.DisplayFor(modelItem => animais.Breed)</td>
+                        <td>@Html.DisplayFor(modelItem => animais.Age) meses</td>
+                        <td>
+                            <div class="btn-group" role="group">
+                              <a role="button" class="btn btn-primary" asp-route-id="@animais.Id" asp-controller="Animal" asp-action="Update"><i class="glyphicon glyphicon-pencil"></i> Editar</a>
+                              <a role="button" class="btn btn-danger" asp-route-id="@animais.Id" asp-controller="Animal" asp-action="Delete"><i class="glyphicon glyphicon-trash"></i> Excluir</a>
+                            </div>
+                        </td>
+                      </tr>
+                  }
+              }
+          </tbody>
+  </table>
+</div>

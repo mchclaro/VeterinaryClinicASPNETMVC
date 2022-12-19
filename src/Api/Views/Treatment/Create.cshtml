@@ -1,0 +1,35 @@
+﻿@model Domain.Entities.Treatment
+@{
+    ViewData["Title"] = "Cadastro do atendimento";
+}
+
+<div>
+  <h2 class="display-4">Cadastro de atendimento</h2>
+</div>
+<br />
+  <form class="col-md-6 mb-2" asp-controller="Treatment" asp-action="Create" method="post">
+    <div class="form-group mb-2">
+      <label for="name">Observação</label>
+      <input type="text" asp-for="Comment" class="form-control" placeholder="Observação">
+      @Html.ValidationMessageFor(x => x.Comment)
+    </div>
+    <div class="form-group mb-2">
+      <label for="breed">Animal</label>
+      <input type="number" asp-for="AnimalId" class="form-control" placeholder="Id do animal">
+      <span>Não sabe o ID do animal? Consulte aqui!</span>
+      <a class="btn btn-primary mb-2 mt-2" asp-action="Index" asp-controller="Animal" role="button"><i class="glyphicon glyphicon-search"></i></a>
+      @Html.ValidationMessageFor(x => x.AnimalId)
+    </div>
+    <div class="form-group mb-2">
+      <label for="age">Veterinário</label>
+      <input type="number" asp-for="VeterinaryId" class="form-control" placeholder="Id do veterinário">
+      <span>Não sabe o ID do veterinário? Consulte aqui!</span>
+      <a class="btn btn-primary mb-2 mt-2" asp-action="Index" asp-controller="Veterinary" role="button"><i class="glyphicon glyphicon-search"></i></a>
+      @Html.ValidationMessageFor(x => x.VeterinaryId)
+    </div>
+    <br />
+    <div class="form-group col-md-6 mb-2">
+      <button class="btn btn-success" role="button" type="submit"><i class="glyphicon glyphicon-ok"></i> Salvar</button>
+      <a class="btn btn-danger" asp-action="Index" asp-controller="Animal" role="button"><i class="glyphicon glyphicon-remove"></i> Cancelar</a>
+    </div>
+</form>

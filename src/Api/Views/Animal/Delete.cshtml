@@ -1,0 +1,14 @@
+﻿@{
+    ViewData["Title"] = "Excluindo animal";
+}
+
+
+<div class="text-center">
+    <h3>Tem certeza que deseja excluir o animal <b>(@Model.Name)?</b></h3>
+<br />
+
+    <div class="btn-group" role="group">
+            <a role="button" class="btn btn-success me-2" asp-action="ConfirmDelete" asp-controller="Animal" asp-route-id="@Model.Id"><i class="glyphicon glyphicon-ok-circle"></i> Sim</a>
+            <a role="button" class="btn btn-danger me-2" asp-action="Index" asp-controller="Animal"><i class="glyphicon glyphicon-remove-circle"></i> Não</a>
+    </div>
+</div>

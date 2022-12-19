@@ -1,0 +1,43 @@
+﻿@model List<Domain.Entities.Veterinary>
+@{
+    ViewData["Title"] = "Veterinário";
+}
+
+<div className="main">
+  <h2>Todos Veterinários</h2>
+  <br />
+
+<div class="">
+    <a class="btn btn-primary" asp-controller="Veterinary" asp-action="Create"><i class="glyphicon glyphicon-plus"></i> Novo Veterinário</a>
+</div>
+
+<br />
+
+  <table class="table table-borderless table-light" id="table">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Nome</th>
+        <th scope="col">Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+        @if (Model != null && Model.Any())
+              {
+                  foreach (var veterinary in Model)
+                  {
+                      <tr>
+                        <td>@Html.DisplayFor(modelItem => veterinary.Id)</td>
+                        <td>@Html.DisplayFor(modelItem => veterinary.Name)</td>
+                        <td>
+                            <div class="btn-group" role="group">
+                              <a role="button" class="btn btn-primary" asp-route-id="@veterinary.Id" asp-controller="Veterinary" asp-action="Update"><i class="glyphicon glyphicon-pencil"></i> Editar</a>
+                              <a role="button" class="btn btn-danger" asp-route-id="@veterinary.Id" asp-controller="Veterinary" asp-action="Delete"><i class="glyphicon glyphicon-trash"></i> Excluir</a>
+                            </div>
+                        </td>
+                      </tr>
+                  }
+              }
+          </tbody>
+  </table>
+</div>

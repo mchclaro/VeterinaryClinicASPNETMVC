@@ -1,0 +1,32 @@
+﻿@model Domain.Entities.Animal
+@{
+    ViewData["Title"] = "Editar";
+}
+
+<div>
+  <h2 class="display-4">Editar</h2>
+</div>
+      <form asp-controller="Animal" asp-action="Update" method="post">
+        <input type="hidden" asp-for="Id"></input>
+        <div class="form-group">
+            <label for="name">Nome</label>
+            <input type="text" asp-for="Name" class="form-control" id="name">
+            @Html.ValidationMessageFor(x => x.Name)
+        </div>
+        <div class="form-group">
+            <label for="breed">Raça</label>
+            <input type="text" asp-for="Breed" class="form-control" id="breed">
+            @Html.ValidationMessageFor(x => x.Breed)
+        </div>
+        <div class="form-group">
+            <label for="age">Idade</label>
+            <input type="number" asp-for="Age" class="form-control" id="age">
+            @Html.ValidationMessageFor(x => x.Age)
+        </div>
+        <br />
+        <div class="form-group col-md-6">
+          <button class="btn btn-success" role="button" type="submit"><i class="glyphicon glyphicon-ok"></i> Salvar</button>
+          <a class="btn btn-danger" asp-action="Index" asp-controller="Animal" role="button"><i class="glyphicon glyphicon-remove"></i> Cancelar</a>
+        </div>
+      </form>
+
